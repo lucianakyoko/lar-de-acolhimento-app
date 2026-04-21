@@ -1,7 +1,6 @@
 // app/(app)/animals/animal-form.tsx
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import {
-  View,
   Text,
   ScrollView,
   StyleSheet,
@@ -28,7 +27,15 @@ export default function AnimalForm() {
   const { isEditing, animal } = useLocalSearchParams();
 
   const isEditMode = isEditing === 'true';
-  const animalData = animal ? JSON.parse(typeof animal === 'string' ? animal : '{}') : null;
+  const animalData = useMemo(() => {
+    if (!animal || typeof animal !== 'string') return null;
+
+    try {
+      return JSON.parse(animal);
+    } catch {
+      return null;
+    }
+  }, [animal]);
 
   const createMutation = useCreateAnimal();
   const updateMutation = useUpdateAnimal();
@@ -54,7 +61,7 @@ export default function AnimalForm() {
         name: animalData.name || '',
         birthDate: animalData.birthDate ? animalData.birthDate.split('T')[0] : '',
         personality: animalData.personality || '',
-        size: animalData.size || 'medio',
+        size: (animalData.size as any) || 'medio',
         vaccinated: Boolean(animalData.vaccinated),
         neutered: Boolean(animalData.neutered),
         about: animalData.about || '',
@@ -63,7 +70,7 @@ export default function AnimalForm() {
         images: Array.isArray(animalData.images) ? [...animalData.images] : [],
       });
     }
-  }, [isEditMode, animalData?._id]);
+  }, [isEditMode, animalData]);
 
   const handleImagePick = async (source: 'camera' | 'gallery') => {
     const permission = source === 'camera'
@@ -98,50 +105,63 @@ export default function AnimalForm() {
     }));
   };
 
-const handleSubmit = async () => {
-  if (!form.name.trim() || !form.birthDate || !form.personality.trim() || !form.about.trim()) {
-    Alert.alert('Erro', 'Preencha todos os campos obrigatórios.');
-    return;
-  }
+  const handleSubmit = async () => {
+    if (!form.name.trim() || !form.birthDate || !form.personality.trim() || !form.about.trim()) {
+      Alert.alert('Erro', 'Preencha todos os campos obrigatórios.');
+      return;
+    }
 
-  setIsSubmitting(true);
+    setIsSubmitting(true);
 
-  try {
-    const dto = {
-      name: form.name.trim(),
-      birthDate: new Date(form.birthDate),
-      personality: form.personality.trim(),
-      size: form.size,
-      vaccinated: form.vaccinated,
-      neutered: form.neutered,
-      about: form.about.trim(),
-      availableForAdoption: form.availableForAdoption,
-      needsList: form.needsList.map(item => ({
-        name: item.name.trim(),
-        price: Number(item.price),
-        image: item.image,
-      })),
-    };
+    try {
+      const dto = {
+        name: form.name.trim(),
+        birthDate: new Date(form.birthDate),
+        personality: form.personality.trim(),
+        size: form.size,
+        vaccinated: form.vaccinated,
+        neutered: form.neutered,
+        about: form.about.trim(),
+        availableForAdoption: form.availableForAdoption,
+        needsList: form.needsList.map(item => ({
+          name: item.name.trim(),
+          price: Number(item.price),
+          image: item.image || '',
+        })),
+      };
 
-    await createMutation.mutateAsync({
-      dto: dto,
-      images: form.images,
-    });
+      if (isEditMode && animalData?._id) {
+        // === MODO EDIÇÃO ===
+        await updateMutation.mutateAsync({
+          id: animalData._id,
+          data: dto,
+          images: form.images
+        });
 
-    Alert.alert('Sucesso', 'Animal cadastrado com sucesso!');
-    router.back();
-  } catch (error: any) {
-    console.error("Erro completo:", error?.response?.data || error);
-    Alert.alert(
-      'Erro ao cadastrar',
-      error?.response?.data?.message || 
-      JSON.stringify(error?.response?.data) || 
-      'Ocorreu um erro inesperado.'
-    );
-  } finally {
-    setIsSubmitting(false);
-  }
-};
+        Alert.alert('Sucesso', 'Animal atualizado com sucesso!');
+      } else {
+        // === MODO CADASTRO ===
+        await createMutation.mutateAsync({
+          dto: dto,
+          images: form.images,
+        });
+
+        Alert.alert('Sucesso', 'Animal cadastrado com sucesso!');
+      }
+
+      router.back();
+    } catch (error: any) {
+      console.error("Erro completo:", error?.response?.data || error);
+      Alert.alert(
+        'Erro',
+        error?.response?.data?.message || 
+        JSON.stringify(error?.response?.data) || 
+        'Ocorreu um erro inesperado.'
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <KeyboardAvoidingView
