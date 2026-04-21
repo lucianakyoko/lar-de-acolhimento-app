@@ -1,50 +1,84 @@
-# Welcome to your Expo app 👋
+# 🐾 Lar São Francisco App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Aplicativo mobile desenvolvido para facilitar a gestão interna de uma ONG de proteção animal, centralizando o controle de animais resgatados, doações recebidas e informações operacionais em uma única plataforma.
 
-## Get started
+O projeto foi criado com foco em organização, produtividade e impacto social.
 
-1. Install dependencies
+---
 
-   ```bash
-   npm install
-   ```
+## 📱 Sobre o projeto
+O Lar São Francisco App nasceu com o objetivo de modernizar a rotina administrativa de uma ONG, substituindo controles manuais e processos descentralizados por uma solução mobile prática e acessível.
 
-2. Start the app
+Com o app, a equipe consegue acompanhar animais acolhidos, registrar necessidades, acompanhar doações e manter informações sempre atualizadas.
 
-   ```bash
-   npx expo start
-   ```
+## ✨ Objetivos
+- Melhorar a gestão interna da ONG
+- Organizar cadastro e acompanhamento de animais
+- Centralizar controle de doações recebidas
+- Reduzir processos manuais e retrabalho
+- Facilitar tomada de decisão com dados organizados
 
-In the output, you'll find options to open the app in a
+## 🚀 Tecnologias utilizadas
+**Mobile:**
+- React Native
+-  Expo
+-  TypeScript
+-  Expo Router
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+**Estado e Requisições:**
+- TanStack Query (React Query)
+- Axios
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+**UI / UX:**
+- React Native Components
+- DateTimePicker
+- Expo Image Picker
 
-## Get a fresh project
+**Segurança**
+- Expo Secure Store
 
-When you're ready, run:
+**Backend (consumido via API)**
+- REST API
+- https://github.com/lucianakyoko/lar-sao-francisco
 
-```bash
-npm run reset-project
-```
+## 📸 Funcionalidades
+### 🔐 Acesso
+- Login autenticado
+- Rotas protegidas
+- Sessão persistida
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### 🐶 Gestão de Animais
+- Cadastro de animais resgatados
+- Edição de informações
+- Upload de imagens
+- Deleção de registro
+- Controle de status para adoção
+- Dados completos
 
-## Learn more
+### 🎁 Gestão de Necessidades e Doações
+- Cadastro de itens necessários
+- Visualização de doações recebidas
 
-To learn more about developing your project with Expo, look at the following resources:
+### 📋 Organização Operacional
+- Informações centralizadas
+- Atualização rápida em campo
+- Melhor acompanhamento da rotina da ONG
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+---
 
-## Join the community
+## 📱 Screenshots
+<p align="center">
+   <img src=".github/login.jpeg" width="250" />
+   <img src=".github/dashboard.jpeg" width="250" />
+</p>
 
-Join our community of developers creating universal apps.
+<p align="center">
+   <img src=".github/doacoes-recebidas.jpeg" width="250" />
+   <img src=".github/resumo-doacoes.jpeg" width="250" />
+   <img src=".github/historico-doacoes.jpeg" width="250" />
+</p>
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+<p align="center">
+   <img src=".github/animais.jpeg" width="250" />
+   <img src=".github/formulario.jpeg" width="250" />
+</p>
