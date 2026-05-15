@@ -26,7 +26,7 @@ export default function Button({ title, onPress, loading = false, style }: Props
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: '#2b9eed',
+    backgroundColor: '#5B7552',
     paddingVertical: 16,
     borderRadius: 12,
     alignItems: 'center',

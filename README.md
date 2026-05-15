@@ -1,4 +1,4 @@
-# 🐾 Lar São Francisco App
+# 🐾 Lar de Acolhimento App
 
 Aplicativo mobile desenvolvido para facilitar a gestão interna de uma ONG de proteção animal, centralizando o controle de animais resgatados, doações recebidas e informações operacionais em uma única plataforma.
 
@@ -7,7 +7,7 @@ O projeto foi criado com foco em organização, produtividade e impacto social.
 ---
 
 ## 📱 Sobre o projeto
-O Lar São Francisco App nasceu com o objetivo de modernizar a rotina administrativa de uma ONG, substituindo controles manuais e processos descentralizados por uma solução mobile prática e acessível.
+O Lar de Acolhimento App nasceu com o objetivo de modernizar a rotina administrativa de uma ONG, substituindo controles manuais e processos descentralizados por uma solução mobile prática e acessível.
 
 Com o app, a equipe consegue acompanhar animais acolhidos, registrar necessidades, acompanhar doações e manter informações sempre atualizadas.
 
@@ -39,7 +39,7 @@ Com o app, a equipe consegue acompanhar animais acolhidos, registrar necessidade
 
 **Backend (consumido via API)**
 - REST API
-- https://github.com/lucianakyoko/lar-sao-francisco
+- https://github.com/lucianakyoko/lar-de-acolhimento
 
 ## 📸 Funcionalidades
 ### 🔐 Acesso

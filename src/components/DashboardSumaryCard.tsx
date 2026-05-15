@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
     width: 'auto',
     flexDirection: "row",
     justifyContent: 'space-between',
-    backgroundColor: "#FFF",
+    backgroundColor: "#5b755258",
     borderRadius: 12,
     paddingHorizontal: 16,
     paddingVertical: 20,
@@ -30,5 +30,6 @@ const styles = StyleSheet.create({
   value: {
     fontSize: 20,
     fontWeight: '900',
+    color: '#5B7552',
   }
 })

@@ -21,11 +21,11 @@ export default function RootLayout() {
             flex: 1,
             justifyContent: 'center',
             alignItems: 'center',
-            backgroundColor: '#f0efdb'
+            backgroundColor: '#FBFAF8'
           }}
         >
           <Text>Carregando...</Text>
-          <ActivityIndicator size="large" color="#2B9EED" />
+          <ActivityIndicator size="large" color="#5B7552" />
         </View>
       </SafeAreaProvider>
     );

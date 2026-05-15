@@ -103,7 +103,7 @@ const styles = StyleSheet.create({
   name: {
     fontSize: 17,
     fontWeight: '700',
-    color: '#333',
+    color: '#5B7552',
     marginBottom: 4,
   },
   age: {

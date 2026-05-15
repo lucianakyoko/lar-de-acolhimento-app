@@ -125,6 +125,7 @@ const styles = StyleSheet.create({
   },
   pageTitle: {
     fontSize: 24,
+    color: '#5B7552',
     fontWeight: 700,
     padding: 20,
     textAlign: 'center',

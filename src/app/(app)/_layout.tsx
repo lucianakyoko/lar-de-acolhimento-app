@@ -30,7 +30,7 @@ export default function AppLayout() {
           fontSize: 12,          
           width: 200,
         },
-        tabBarActiveTintColor: "#2B9EED",
+        tabBarActiveTintColor: "#5B7552",
         tabBarInactiveTintColor: "#8f8e8e",
         tabBarItemStyle: {
           width: 200,

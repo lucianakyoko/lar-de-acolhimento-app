@@ -210,7 +210,7 @@ const styles = StyleSheet.create({
   previewImage: { width: 140, height: 140, borderRadius: 12, marginBottom: 8 },
   removePreview: { color: '#e63939', fontSize: 14 },
   addButton: {
-    backgroundColor: '#2b9eed',
+    backgroundColor: '#36502e',
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',

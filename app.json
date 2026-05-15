@@ -1,18 +1,18 @@
 {
   "expo": {
-    "name": "lar-sao-francisco-app",
-    "slug": "lar-sao-francisco-app",
+    "name": "Lar de Acolhimento",
+    "slug": "lar-de-acolhimento",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "larsaofranciscoapp",
+    "scheme": "lardacolhimentoapp",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true
     },
     "android": {
-      "package": "com.pi.larsaofranciscoapp",
+      "package": "com.pi.lardeacolhimento",
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
